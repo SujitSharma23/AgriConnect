@@ -23,7 +23,7 @@ const FarmerDashboard = () => {
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
         {[
           { icon: Sprout, label: 'Active Listings', value: '3', color: 'bg-primary/10 text-primary' },
-          { icon: Package, label: 'Total Reserved', value: '5,500 kg', color: 'bg-secondary/20 text-secondary' },
+          { icon: Package, label: 'Total Reserved', value: '2,500 kg', color: 'bg-secondary/20 text-secondary' },
           { icon: TrendingUp, label: 'Revenue (Est.)', value: 'NPR 185K', color: 'bg-success/10 text-success' },
         ].map((stat, i) => (
           <motion.div
