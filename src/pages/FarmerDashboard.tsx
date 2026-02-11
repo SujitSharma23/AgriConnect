@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sprout, Package, TrendingUp } from 'lucide-react';
+import { Sprout, Package, TrendingUp, Plus } from 'lucide-react';
 import HarvestPredictor from '@/components/HarvestPredictor';
 import YieldEstimator from '@/components/YieldEstimator';
 import CropListingCard from '@/components/CropListingCard';
@@ -16,7 +16,9 @@ const FarmerDashboard = () => {
         className="mb-8"
       >
         <h1 className="font-serif text-3xl text-foreground">Farmer Dashboard</h1>
-        <p className="mt-1 text-muted-foreground">Manage your crops, predict harvests, and track your listings.</p>
+        <p className="mt-1 text-muted-foreground">
+          Manage your crops, predict harvests, and track your listings.
+        </p>
       </motion.div>
 
       {/* Quick Stats */}
@@ -49,6 +51,40 @@ const FarmerDashboard = () => {
         <HarvestPredictor />
         <YieldEstimator />
       </div>
+
+      {/* Add New Listing Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="mt-10 rounded-xl border border-border bg-card p-6 shadow-soft"
+      >
+        <div className="mb-4 flex items-center gap-2">
+          <Plus className="h-5 w-5 text-primary" />
+          <h2 className="font-serif text-2xl text-foreground">Add New Listing</h2>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <input
+            type="text"
+            placeholder="Crop Name"
+            className="rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/30"
+          />
+          <input
+            type="number"
+            placeholder="Quantity (kg)"
+            className="rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/30"
+          />
+          <input
+            type="number"
+            placeholder="Price per kg"
+            className="rounded-lg border border-border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-primary/30"
+          />
+          <button className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90">
+            <Plus className="h-4 w-4" />
+            Add Listing
+          </button>
+        </div>
+      </motion.div>
 
       {/* My Listings */}
       <div className="mt-8">
